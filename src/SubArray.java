@@ -26,7 +26,7 @@ public class SubArray {
 
     }
 
-    public int minDiffer(int[] vetor1, int[] vetor2)
+    public int[] minDiffer(int[] vetor1, int[] vetor2)
     {
         int diferenca = 0;
         int n = vetor1.length;
@@ -44,14 +44,17 @@ public class SubArray {
         }
 
         int minValor = Collections.min(array);
-        int[] v ;
+        int[] v = new int[2];
 
         for(int i = 0; i < array.size(); i++){
             if (minValor == array.get(i)){
+                v[0] = array.get(i-2);
+                v[1] = array.get(i-1);
 
             }
         }
 
-        return diferenca;
+
+        return v ;
     }
 }

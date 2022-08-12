@@ -11,7 +11,13 @@ public class Main {
        //System.out.print((array[0]+1)  );
 
         SubArray subs = new SubArray();
-        System.out.println(subs.maxSubArray(array));
+        //System.out.println(subs.maxSubArray(array));
+
+        int[] array1 = new int[]{23,5,10,17,30};
+        int[] array2 = new int[]{26,134, 135, 14, 19};
+
+
+        subs.minDiffer(array1,array2);
 
         /*for(int i = 0; i < array.length; i++){
             System.out.print(array[i]);
