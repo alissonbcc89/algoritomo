@@ -1,6 +1,8 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 
 public class SubArray {
@@ -26,35 +28,46 @@ public class SubArray {
 
     }
 
-    public int[] minDiffer(int[] vetor1, int[] vetor2)
+    public ArrayList<Integer> minDiffer(int[] vetor1, int[] vetor2)
     {
-        int diferenca = 0;
-        int n = vetor1.length;
-        int m = vetor2.length;
-        ArrayList<Integer> array = new ArrayList<>();
 
+        int n1,n2,n3;
+        int t1 = vetor1.length;
+        int t2 = vetor2.length;
+        ArrayList<Integer> aux = new ArrayList<>();
+        int soma = 0;
 
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                diferenca =  Math.abs((vetor1[i] - vetor2[j]));
-                array.add(vetor1[i]);
-                array.add(vetor2[j]);
-                array.add(diferenca);
-            }
-        }
-
-        int minValor = Collections.min(array);
-        int[] v = new int[2];
-
-        for(int i = 0; i < array.size(); i++){
-            if (minValor == array.get(i)){
-                v[0] = array.get(i-2);
-                v[1] = array.get(i-1);
+        for(int i = 0; i < t1; i++){
+            for (int j = 0; j < t2; j++) {
+                soma = 0;
+                //n1 =  Math.abs((vetor1[i] - vetor2[j])  ;
+                //adicao = vetor1[i] + vetor[j];
+                soma = Math.abs(vetor1[i] + vetor2[j]);
+                aux.add(vetor1[i]);
+                aux.add(vetor2[j]);
+                aux.add(soma);
 
             }
         }
 
+        ArrayList<Integer> arr = new ArrayList<>();
 
-        return v ;
+
+        int minList = Math.abs(Collections.min(aux));
+
+
+
+        for(int i = 2; i < aux.size(); i+=3){
+            if( aux.get(i).equals(minList) ){
+                arr.add(aux.get(i-2));
+                arr.add(aux.get(i-1));
+            }
+        }
+
+       // maiorSoma.t
+
+        //System.out.print(arr);
+        return arr;
     }
+
 }
