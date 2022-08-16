@@ -17,18 +17,21 @@ public class Main {
         int[] array1 = new int[]{23,5,10,17,30};
         int[] array2 = new int[]{26,134,135,14,19};
 
+        //int n = array1.length;
+        //System.out.println(n);
 
         //System.out.print
         //subs.minDiffer(array1,array2);
 
-        ArrayList<Integer> lista = subs.minDiffer(array1,array2);
+        //ArrayList<Integer> lista = subs.minDiffer(array1,array2);
 
 
         // List listInClassA = m1.myNumbers();
         //System.out.println("The List is "+listInClassA);
 
-        List listaInClass = subs.minDiffer(array1,array2);
-        System.out.println(listaInClass);
+        //List listaInClass = subs.minDiffer(array1,array2);
+        //System.out.println(listaInClass);
+        subs.minDiffer(array1,array2);
 
 
         //System.out.print(subs.minDiffer(array1,array2));
