@@ -1,54 +1,49 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Vida {
 
-    private boolean estado = false;
+    public int viver(int[] array){
+        int qnt = 0;
+        int n = array.length;
+        int hi,hf;
+        int valorMaximo = 0;
+
+        ArrayList<Integer> vetor = new ArrayList<>();
 
 
+        for(int i = 0; i < n; i+=2){
 
-
-
-    public void irCrush(){}
-    public void cursoCodificacao(){}
-    public void assitirFilme(){}
-    public void jogarDota(){}
-    public void estudarExame(){}
-    public void dormir(){ }
-
-    public void executarTarefa(){
-        Scanner s = new Scanner(System.in);
-        System.out.println("Digite a opcao desejada:\n1 -Ir Crush\n2 - Curso de Codificacao\n" +
-                "3 -Assistir Filme\n4 -jogarDota\n" +
-                "5 -estudarExame\n6 -dormir\n0 -Exit");
-        int opcao = s.nextInt();
-
-        switch (opcao){
-            case 1:
-                this.irCrush();
-                break;
-            case 2:
-                this.cursoCodificacao();
-            case 3:
-                this.assitirFilme();
-                break;
-            case 4:
-                this.jogarDota();
-                break;
-            case 5:
-                this.estudarExame();
-                break;
-            case 6:
-                this.dormir();
-                break;
-
-            case 0:
-
+            hi = array[i];
+            hf =  array[i+1];
+            if(i == 0) {
+                if (hi < hf) {
+                    qnt += 1;
+                    continue;
+                }
+            }
+            if(i > 0){
+                if(array[i-1] < hf && hf <=11 || hf == 0){
+                    qnt+= 1;
+                }
+                if(array[i-1] > hf){
+                    vetor.add(qnt);
+                    qnt = 1;
+                }
+            }
 
         }
 
+        for(int i = 0; i < vetor.size(); i++){
+            if(vetor.get(i) > valorMaximo)
+            {
+                valorMaximo = vetor.get(i);
+            }
+        }
 
+        return valorMaximo;
     }
 
-    public void viver(Pessoa p){
 
-    }
 
 }

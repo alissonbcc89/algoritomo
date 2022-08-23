@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Pessoa {
+/*public class Pessoa {
 
     public Vida vida;
 
@@ -70,3 +70,4 @@ public class Pessoa {
                 '}';
     }
 }
+*/
