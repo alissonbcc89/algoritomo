@@ -52,6 +52,9 @@ public class Main {
 
         System.out.println(vida.viver(vetor));
 
+        Relogio relogio = new Relogio();
+
+        System.out.print(relogio.hora(125));
 
     }
 }
