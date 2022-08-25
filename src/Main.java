@@ -46,15 +46,31 @@ public class Main {
 
         //System.out.println("\nData/Hora atual: "+c.getTime());
 
-        int[] vetor = {7,9,0,10,4,5,8,9,4,10,5,7};
+        //int[] vetor = {7,9,0,10,4,5,8,9,4,10,5,7};
 
-        Vida vida = new Vida();
+        //Vida vida = new Vida();
 
-        System.out.println(vida.viver(vetor));
+        //System.out.println(vida.viver(vetor));
 
-        Relogio relogio = new Relogio();
+        //Relogio relogio = new Relogio();
 
-        System.out.print(relogio.hora(125));
+        //System.out.print(relogio.hora(125));
 
+        //String a = "alisson";
+       // char[] chars = a.toCharArray();
+
+        //int tamanho = chars.length;
+        //String bigString = "Eu gostei do filme, atuar em filme foi ótimo!";
+
+        //int t = bigString.length();
+
+        //System.out.println(t);
+
+
+        String bigString = "I liked the movie, acting in movie was great!";
+
+        char[] palavra = bigString.toCharArray();
+
+        System.out.print(palavra[12]);
     }
 }
