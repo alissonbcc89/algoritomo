@@ -67,10 +67,27 @@ public class Main {
         //System.out.println(t);
 
 
-        String bigString = "I liked the movie, acting in movie was great!";
+      //  String bigString = "I liked the movie, acting in movie was great!";
 
-        char[] palavra = bigString.toCharArray();
+        //char[] palavra = bigString.toCharArray();
 
-        System.out.print(palavra[12]);
+        //int a = palavra.length;
+
+        //System.out.print(palavra[12]);
+
+        String texto = "Hoje o Sol está forte, sol";
+        String procurarPor = "sol";
+
+        /*System.out.println(texto.toLowerCase().contains(procurarPor.toLowerCase()));
+        int i = texto.toLowerCase().indexOf(procurarPor.toLowerCase());
+
+        System.out.print(i);
+        char[] letra = texto.toCharArray();
+
+        System.out.print(letra[7]);*/
+
+        PesquisaTudo pt =  new PesquisaTudo();
+
+      pt.buscar(texto,procurarPor);
     }
 }

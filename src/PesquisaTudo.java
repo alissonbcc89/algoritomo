@@ -1,8 +1,9 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PesquisaTudo {
 
-    public boolean igual(){}
+    //public boolean igual(){}
 
     public void buscar(String maior, String menor){
 
@@ -13,29 +14,45 @@ public class PesquisaTudo {
 
         int tamanho = maior.length();
         int tmin = menor.length();
-        String aux;
-
+        String aux = "";
+        int inicio;
+        //int[] vetor = new int[2];
+        ArrayList<Integer> vetor =  new ArrayList<>();
 
         for(int i = 0; i < tamanho ; i++) {
-            for (int j = 0; j < tmin; j++) {
-                if (min[j] == max[i]){
-                    aux += max[i];
-                    break;
-                }
-                else {
-                    aux = null;
-                    break;
-                }
-                        //guarda posicao inicial pois ela retorna no verto caso verificado que
-                        // as palavras sao iguais
-                        array.add(i);
-
+            if(max[i] == min[0]){
+                inicio = i;
+                aux += max[i];
+                for(int j = inicio+1; j < tmin-1; j++){
+                    for( int a = 1 ; a < tmin-1; a++){
+                        if(max[j] == min[a]){
+                            aux += max[j];
+                            break;
+                        }
                     }
-                    else break;
+
                 }
+
+                if(aux.equals(min)) {
+
+                        vetor.add(i);
+
+                }
+                else break;
+
+
+            }
 
         }
+        for(int m = 0; m < vetor.size(); m++){
+            System.out.println(vetor.get(m));
+        }
+
     }
 
+
 }
+
+
+
 
