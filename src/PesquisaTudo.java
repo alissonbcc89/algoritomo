@@ -5,54 +5,41 @@ public class PesquisaTudo {
 
     //public boolean igual(){}
 
-    public void buscar(String maior, String menor){
+    public ArrayList<Integer> buscar(String frase, String palavra) {
 
-        char[] min = menor.toCharArray();
-        char[] max = maior.toCharArray();
+        char[] min = palavra.toCharArray();
+        char[] max = frase.toCharArray();
 
         ArrayList<String> array = new ArrayList<>();
 
-        int tamanho = maior.length();
-        int tmin = menor.length();
+        int tamanho = frase.length();
+        int tmin = palavra.length();
         String aux = "";
         int inicio;
-        //int[] vetor = new int[2];
-        ArrayList<Integer> vetor =  new ArrayList<>();
+        //int[] vetor = new int[];
+        ArrayList<Integer> vetor = new ArrayList<>();
 
-        for(int i = 0; i < tamanho ; i++) {
+        for(int i = 0; i < tamanho; i++) {
             if(max[i] == min[0]){
                 inicio = i;
-                aux += max[i];
-                for(int j = inicio+1; j < tmin-1; j++){
-                    for( int a = 1 ; a < tmin-1; a++){
-                        if(max[j] == min[a]){
-                            aux += max[j];
-                            break;
+                aux = String.valueOf(max[i]);
+                for(int j = 1; j<tmin; j++){
+                    if(max[inicio+j] == min[j]){
+                        aux += max[inicio+j];
+                        if(aux == palavra){
+                            vetor.add(inicio);
                         }
                     }
-
+                    else{
+                        inicio = 0;
+                        break;
+                    }
                 }
-
-                if(aux.equals(min)) {
-
-                        vetor.add(i);
-
-                }
-                else break;
-
-
             }
-
         }
-        for(int m = 0; m < vetor.size(); m++){
-            System.out.println(vetor.get(m));
-        }
-
+        return vetor;
     }
-
-
 }
-
 
 
 
