@@ -88,7 +88,14 @@ public class Main {
 
         PesquisaTudo pt = new PesquisaTudo();
 
+
         pt.buscar(frase, palavra);
+
+
+
+       // for(int a = 0; a < frase.length(); a++){
+         //   System.out.println(frase[a]);
+        //}
 
 
 
