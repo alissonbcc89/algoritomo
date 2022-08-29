@@ -54,7 +54,7 @@ public class PesquisaTudo {
                     }
                     if (aux.length() == palavra.length()){
                        vetor.add(i);
-                        System.out.println(vetor);
+                        //System.out.println(vetor);
                         break;
 
                     }
@@ -67,6 +67,7 @@ public class PesquisaTudo {
 
 
         System.out.println(vetor);
+
     }
 
 }
