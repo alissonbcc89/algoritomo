@@ -75,8 +75,11 @@ public class Main {
 
         //System.out.print(palavra[12]);
 
-        String frase = "Hoje o sol está forte, sol";
-        String palavra = "sol";
+        String frase = "Eu gostei do filme, atuar em filme foi ótimo!";
+        String palavra = "filme";
+
+        //String frase = "Hoje o sol está forte, sol";
+        //String palavra = "sol";
 
         /*System.out.println(texto.toLowerCase().contains(procurarPor.toLowerCase()));
         int i = texto.toLowerCase().indexOf(procurarPor.toLowerCase());

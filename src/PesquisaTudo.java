@@ -7,17 +7,17 @@ public class PesquisaTudo {
 
     public void buscar(String frase, String palavra) {
 
-        System.out.print("Bem vindo ao caca palavra");
+       // System.out.print("Bem vindo ao caca palavra");
 
         char[] min = palavra.toCharArray();
         char[] max = frase.toCharArray();
 
-        System.out.print("\nA strings de entradas foram transformadas em char  para poder se trabalhar com estrutura de repeticao nela");
+        //System.out.print("\nA strings de entradas foram transformadas em char  para poder se trabalhar com estrutura de repeticao nela");
 
         ArrayList<String> array = new ArrayList<>();
 
 
-        System.out.print("\nArrayList de String criado acima");
+        //System.out.print("\nArrayList de String criado acima");
 
 
         int tamanho = frase.length();
@@ -26,34 +26,36 @@ public class PesquisaTudo {
         int inicio;
         //int[] vetor = new int[];
         ArrayList<Integer> vetor = new ArrayList<>();
-        System.out.print("\nCapturando tamanho da frase e palavra, criando variavel int inicio da posicao ");
+        //System.out.print("\nCapturando tamanho da frase e palavra, criando variavel int inicio da posicao ");
 
         for (int i = 0; i < tamanho; i++) {
-            System.out.print("\nEntrando na iteracao de percorrer a frase"+ i + max[i]);
+           // System.out.print("\nEntrando na iteracao de percorrer a frase"+ i + max[i]);
             if (max[i] == min[0]) {
-                System.out.print("\nCondicao de igualdade entre primeira letra da palavra e texto");
+             //   System.out.print("\nCondicao de igualdade entre primeira letra da palavra e texto");
                 inicio = i;
-                System.out.print("\nCondicao de atribuicao da posicao da primeira letra a uma variavel");
+            //    System.out.print("\nCondicao de atribuicao da posicao da primeira letra a uma variavel");
                 aux = Character.toString(max[i]);
-                System.out.print("\nAtribuiu a primeira letra a um vetor de caracter para comparacao final\t"+ aux);
+            //    System.out.print("\nAtribuiu a primeira letra a um vetor de caracter para comparacao final\t"+ aux);
                 for (int j = 1; j < tmin; j++) {
-                    System.out.print("\nEntrou na estrutura de repeticao com intuito de fazer frase e palavra andarem em sincronia"+ j);
+              //      System.out.print("\nEntrou na estrutura de repeticao com intuito de fazer frase e palavra andarem em sincronia"+ j);
                     if (max[inicio + j] == min[j]) {
-                        System.out.print("\nSe a posicao consecutiva for igual ENTROU\n");
-                        aux += max[inicio + j];
-                        System.out.print(aux);
-                        System.out.println(aux.length());
-                        System.out.println(palavra.length());
+             //           System.out.print("\nSe a posicao consecutiva for igual ENTROU \n");
+                        aux += Character.toString(max[inicio + j]);
+                        //System.out.print(aux);
+               //         System.out.println(aux.length());
+              //          System.out.println(palavra.length());
                         //System.out.println(vetor.get(i));
                         //posso deifinir se max[]
 
-                            vetor.add(i);
-                            System.out.println(vetor);
+
+                            //System.out.println(vetor);
 
 
                     }
-                    if (palavra == aux){
+                    if (aux.length() == palavra.length()){
+                       vetor.add(i);
                         System.out.println(vetor);
+                        break;
 
                     }
 
@@ -64,6 +66,7 @@ public class PesquisaTudo {
         }
 
 
+        System.out.println(vetor);
     }
 
 }
