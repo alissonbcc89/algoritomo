@@ -9,7 +9,8 @@ public class ConcatenaInteiros {
         String concat = "";
         int tamanho = num.length;
         //int indice = 0;
-
+                int c = concatena(num);
+                array.add(c);
         for(int i = 0; i < tamanho; i++){
 
             for(int j = 1; j < tamanho; j++){
@@ -35,10 +36,17 @@ public class ConcatenaInteiros {
             concat += vetor[i];
         }
 
-        //array.add(Integer.valueOf(concat));
-        //System.out.println(array);
         int a = Integer.valueOf(concat);
         return  a;
     }
-
+    public int maiorAbs(ArrayList<Integer> arr){
+        int indice;
+        for(int i = 0; i < arr.size(); i++){
+            if (arr.get(i) < arr.get(i+1)) {
+                indice = arr.get(i);
+                arr.set(i,arr.get(i+1));
+                arr.set(i+1,indice);
+            }
+        }
+    }
 }
