@@ -92,7 +92,18 @@ public class Main {
         PesquisaTudo pt = new PesquisaTudo();
 
 
-        pt.buscar(frase, palavra);
+        //pt.buscar(frase, palavra);
+
+        ConcatenaInteiros ci = new ConcatenaInteiros();
+
+        int[] array = new int[]{ 10,11,20,30,3 };
+
+        //ci.ordenaV(array);
+
+        //ci.concatena(array);
+
+        ci.ordenaV(array);
+
 
 
 
