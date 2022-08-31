@@ -1,14 +1,84 @@
-import java.lang.reflect.Array;
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 
-public class ConcatenaInteiros {
+public class Permutacao {
+    //numero da permutacao atual
+    private static int cont=0;
+
+    //armazena a permutacao corrente
+    private static int[] p;
+
+
+    /**
+     * metodo principal: recebe o vetor cujos elementos que serao permutados
+     * @param vet
+     */
+    public static void permuta(int[] vet) {
+
+        p = new int[vet.length];
+        permuta(vet,0);
+    }
+
+
+    /**
+     * método recursivo que implementa as permutacoes
+     * @param vet
+     * @param n
+     */
+    private static void permuta(int[]vet, int n) {
+
+        if (n==vet.length) {
+            cont++;
+            imprime();
+
+        } else {
+
+            for (int i=0; i < vet.length; i++) {
+
+                boolean achou = false;
+
+                for (int j = 0; j < n; j++) {
+
+                    if (p[j]==vet[i]) achou = true;
+                }
+
+                if (!achou) {
+
+                    p[n] = vet[i];
+                    permuta(vet,n+1);
+                }
+
+            } //--for
+
+        } //--if/else
+
+    } //--permuta
+
+
+    /** imprime a permutacao corrente */
+    private static void imprime() {
+
+        System.out.println();
+        System.out.print("(" + cont + ") : ");
+        for (int i=0; i < p.length; i++) System.out.print(p[i] + " ");
+
+    } //--imprime
+
+
+    /** metodo principal para teste da classe */
+    public static void main(String[] args) {
+
+        int[] array = new int[]{ 10,11,20,30,3 };
+        //char v[] = {'A','B','C', 'D'};
+        Permutacao.permuta(array);
+    }
+
 
     public void ordenaV(int[] num){
         ArrayList<Integer> array = new ArrayList<>();
         int aux,numerica;
         String concat = "";
         int tamanho = num.length;
-               // int indice;
+        // int indice;
         int c = concatena(num);
         array.add(c);
         int index;
@@ -58,6 +128,7 @@ public class ConcatenaInteiros {
         int a = Integer.valueOf(concat);
         return  a;
     }
+
     public int maiorAbs(ArrayList<Integer> arr){
 
         // Create maxValue variable and initialize with 0
@@ -71,13 +142,4 @@ public class ConcatenaInteiros {
         return maxValue;
     }
 
-    public void permuta(int[] vetor){
-        ArrayList<Integer> array = new ArrayList<Integer>();
-
-        for(int i = 0; i < vetor.length; i++){
-
-        }
-    }
-
 }
-*/
