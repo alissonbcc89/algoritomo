@@ -94,15 +94,17 @@ public class Main {
 
         //pt.buscar(frase, palavra);
 
-        //ConcatenaInteiros ci = new ConcatenaInteiros();
+        ConcatenaInteiros ci = new ConcatenaInteiros();
 
-     //   int[] array = new int[]{ 10,11,20,30,3 };
+        int[] array = new int[]{ 10,11,20,30,3 };
 
-        //ci.ordenaV(array);
+        System.out.println(ci.concatena(array));
+      // ci.maiorAbs(array);
 
       //  ci.concatena(array);
 
         //ci.ordenaV(array);
+
 
 
 

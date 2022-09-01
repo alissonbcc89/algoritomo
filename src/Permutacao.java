@@ -32,7 +32,7 @@ public class Permutacao {
 
         } else {
 
-            for (int i=0; i < vet.length; i++) {
+            for (int i = 0; i < vet.length; i++) {
 
                 boolean achou = false;
 
@@ -59,9 +59,27 @@ public class Permutacao {
 
         System.out.println();
         System.out.print("(" + cont + ") : ");
-        for (int i=0; i < p.length; i++) System.out.print(p[i] + " ");
+        for (int i=0; i < p.length; i++) {System.out.print(p[i]);}
+
+        System.out.print(p[0]);
+       // System.out.println(maiorAbs(p));
+
+      //System.out.println(maiorAbs(p));
 
     } //--imprime
+
+    public static int maiorAbs(int[] arr){
+
+        // Create maxValue variable and initialize with 0
+        int maxValue = 0;
+
+        // Check maximum element using for loop
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxValue)
+                maxValue = arr[i];
+        }
+        return maxValue;
+    }
 
 
     /** metodo principal para teste da classe */
@@ -73,7 +91,7 @@ public class Permutacao {
     }
 
 
-    public void ordenaV(int[] num){
+ /*   public void ordenaV(int[] num){
         ArrayList<Integer> array = new ArrayList<>();
         int aux,numerica;
         String concat = "";
@@ -115,7 +133,7 @@ public class Permutacao {
 
         System.out.println(a);
 
-    }
+    }*/
 
     public int concatena(int[] vetor){
         ArrayList<Integer> array = new ArrayList<>();
@@ -129,17 +147,8 @@ public class Permutacao {
         return  a;
     }
 
-    public int maiorAbs(ArrayList<Integer> arr){
 
-        // Create maxValue variable and initialize with 0
-        int maxValue = 0;
 
-        // Check maximum element using for loop
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) > maxValue)
-                maxValue = arr.get(i);
-        }
-        return maxValue;
-    }
+
 
 }

@@ -1,53 +1,60 @@
 import java.lang.reflect.Array;
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class ConcatenaInteiros {
 
-    public void ordenaV(int[] num){
-        ArrayList<Integer> array = new ArrayList<>();
-        int aux,numerica;
-        String concat = "";
-        int tamanho = num.length;
-               // int indice;
-        int c = concatena(num);
-        array.add(c);
-        int index;
-
-        for(int i = 0; i < tamanho; i++){
-            if(i == 0){
-                for(int j = 1; j < tamanho; j++){
-
-                    aux = num[j+1];
-                    num[j+1] = num[j];
-                    num[j] = aux;
-                    int a = concatena(num);
-                    array.add(a);
-                    break;
-                }
-            }
-            else {
-                for (int j = 1; j < tamanho; j++) {
-
-                    aux = num[i];
-                    num[i] = num[j+1];
-                    num[j] = aux;
-                    int a = concatena(num);
-                    array.add(a);
-                }
-            }
-
-        }
-
-        System.out.println(array+"\n");
-
-
-        int a = maiorAbs(array);
-
-        System.out.println(a);
-
+    private static int cont=0;
+    private static int[] p;
+    public void permuta(int[] vet) {
+        p = new int[vet.length];
+        permuta(vet,0);
     }
 
-    public int concatena(int[] vetor){
+    private static void permuta(int[]vet, int valor) {
+        if (valor==vet.length) {
+            //cont++;
+           // imprime();
+
+
+        } else {
+
+            for (int i = 0; i < vet.length; i++) {
+
+                boolean achou = false;
+
+                for (int j = 0; j < valor; j++) {
+
+                    if (p[j]==vet[i]) achou = true;
+                }
+
+                if (!achou) {
+
+                    p[valor] = vet[i];
+                    permuta(vet,valor+1);
+                }
+
+            } //--for
+
+        } //--if/else
+
+
+    }
+    private static void imprime() {
+
+        System.out.println();
+        System.out.print("(" + cont + ") : ");
+      //  for (int i=0; i < p.length; i++) {concatena(p);}
+        for(int i = 0; i < p.length; i++){ maiorAbs(p);}
+
+
+        System.out.print(p[0]);
+        // System.out.println(maiorAbs(p));
+
+        //System.out.println(maiorAbs(p));
+
+    } //--imprime
+
+    public static int concatena(int[] vetor){
         ArrayList<Integer> array = new ArrayList<>();
         String concat = "";
         int tamanho = vetor.length;
@@ -58,26 +65,20 @@ public class ConcatenaInteiros {
         int a = Integer.valueOf(concat);
         return  a;
     }
-    public int maiorAbs(ArrayList<Integer> arr){
+
+    public static int maiorAbs(int[] arr){
 
         // Create maxValue variable and initialize with 0
         int maxValue = 0;
 
         // Check maximum element using for loop
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) > maxValue)
-                maxValue = arr.get(i);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxValue)
+                maxValue = arr[i];
         }
         return maxValue;
     }
 
-    public void permuta(int[] vetor){
-        ArrayList<Integer> array = new ArrayList<Integer>();
 
-        for(int i = 0; i < vetor.length; i++){
-
-        }
-    }
 
 }
-*/
