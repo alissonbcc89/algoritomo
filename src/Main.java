@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -98,7 +99,8 @@ public class Main {
 
         int[] array = new int[]{ 10,11,20,30,3 };
 
-        System.out.println(ci.concatena(array));
+        System.out.println(ci.permuta(array));
+       // ci.permuta(array);
       // ci.maiorAbs(array);
 
       //  ci.concatena(array);

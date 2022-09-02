@@ -3,68 +3,79 @@ import java.util.ArrayList;
 
 public class ConcatenaInteiros {
 
+
     private static int cont=0;
+    String palavra;
     private static int[] p;
-    public void permuta(int[] vet) {
-        p = new int[vet.length];
-        permuta(vet,0);
-    }
+    public int permuta(int[] num) {
 
-    private static void permuta(int[]vet, int valor) {
-        if (valor==vet.length) {
-            //cont++;
-           // imprime();
+        p = new int[num.length];
+
+       for(int i = 0; i < num.length;i++){
+           String palavranumerica = "";
+            for(int j = 0; j< num.length; j++){
+                if( i == j){
+
+                    //atribui  o conjunto de inteiros a uma unica variavel string
+                    for(int a = 0; a< num.length; a++){ palavranumerica += num[a];}
+
+                    //transforma a palavra em inteiro
+                    int a = Integer.parseInt(palavranumerica);
+
+                    //adc ao repositorio
+                    p[cont] =  a;
+                    palavranumerica +="";
+                    cont ++;
+
+                    //para a interacao e faz com que o j seja maior que o i
+                    break;
+                }//troca voltando
+                if(i>=1){
+                    int aux = num[j];
+                    num[j] = num[i];
+                    num[i] = aux;
+
+                    for(int a = 0; a < num.length; a++){
+                        palavranumerica += num[a];
+                    }
+                    int a = Integer.parseInt(palavranumerica);
+                    p[cont] = a;
+                    cont++;
+                    break;
+                }
+                else{
+
+                    int aux = num[j];
+                    num[j] = num[j+1];
+                    num[j+1] = aux;
+
+                    for(int a = 0; a< num.length; a++){ palavranumerica += num[a];}
+
+                    int a = Integer.parseInt(palavranumerica);
+
+                    //adc ao repositorio
+                    p[i] =  a;
+                    palavranumerica +="";
+                    //para a interacao e faz com que o j seja maior que o i
+                    break;
 
 
-        } else {
-
-            for (int i = 0; i < vet.length; i++) {
-
-                boolean achou = false;
-
-                for (int j = 0; j < valor; j++) {
-
-                    if (p[j]==vet[i]) achou = true;
                 }
 
-                if (!achou) {
-
-                    p[valor] = vet[i];
-                    permuta(vet,valor+1);
-                }
-
-            } //--for
-
-        } //--if/else
-
+            }
+       }
+            return imprime();
 
     }
-    private static void imprime() {
-
-        System.out.println();
-        System.out.print("(" + cont + ") : ");
-      //  for (int i=0; i < p.length; i++) {concatena(p);}
-        for(int i = 0; i < p.length; i++){ maiorAbs(p);}
+    private static int imprime() {
 
 
-        System.out.print(p[0]);
-        // System.out.println(maiorAbs(p));
+        return maiorAbs(p);
 
-        //System.out.println(maiorAbs(p));
 
     } //--imprime
 
-    public static int concatena(int[] vetor){
-        ArrayList<Integer> array = new ArrayList<>();
-        String concat = "";
-        int tamanho = vetor.length;
-        for(int i = 0;i < tamanho; i++){
-            concat += vetor[i];
-        }
 
-        int a = Integer.valueOf(concat);
-        return  a;
-    }
 
     public static int maiorAbs(int[] arr){
 
