@@ -2,14 +2,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ConcatenaInteiros {
-
-
     private static int cont=0;
-    String palavra;
-    private static int[] p;
+
+    public  ArrayList<Integer> p;
     public int permuta(int[] num) {
 
-        p = new int[num.length];
+
 
        for(int i = 0; i < num.length;i++){
            String palavranumerica = "";
@@ -23,25 +21,28 @@ public class ConcatenaInteiros {
                     int a = Integer.parseInt(palavranumerica);
 
                     //adc ao repositorio
-                    p[cont] =  a;
-                    palavranumerica +="";
+                    p.set(cont,a);
+                    palavranumerica ="";
                     cont ++;
+                    //System.out.println(cont+":\t" + palavranumerica);
 
                     //para a interacao e faz com que o j seja maior que o i
                     break;
                 }//troca voltando
-                if(i>=1){
-                    int aux = num[j];
-                    num[j] = num[i];
-                    num[i] = aux;
+                if(i != j){
+                    int aux = num[i];
+                    num[i] = num[j];
+                    num[j] = aux;
 
                     for(int a = 0; a < num.length; a++){
                         palavranumerica += num[a];
                     }
                     int a = Integer.parseInt(palavranumerica);
-                    p[cont] = a;
+                    p.set(cont, a);
+                    palavranumerica = "";
                     cont++;
-                    break;
+                   // System.out.println(cont+":\t" + palavranumerica);
+
                 }
                 else{
 
@@ -54,10 +55,10 @@ public class ConcatenaInteiros {
                     int a = Integer.parseInt(palavranumerica);
 
                     //adc ao repositorio
-                    p[i] =  a;
+                    p.set(cont, a);
                     palavranumerica +="";
-                    //para a interacao e faz com que o j seja maior que o i
-                    break;
+                    //para a interacao e faz com que o j eja maior que o i
+                    //                    break;s
 
 
                 }
@@ -67,7 +68,7 @@ public class ConcatenaInteiros {
             return imprime();
 
     }
-    private static int imprime() {
+    public int imprime() {
 
 
         return maiorAbs(p);
@@ -77,15 +78,15 @@ public class ConcatenaInteiros {
 
 
 
-    public static int maiorAbs(int[] arr){
+    public int maiorAbs(ArrayList<Integer> arr){
 
         // Create maxValue variable and initialize with 0
         int maxValue = 0;
 
         // Check maximum element using for loop
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > maxValue)
-                maxValue = arr[i];
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) > maxValue)
+                maxValue = arr.get(i);
         }
         return maxValue;
     }
