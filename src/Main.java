@@ -99,7 +99,9 @@ public class Main {
 
         int[] array = new int[]{ 10,11,20,30,3 };
 
-        System.out.println(ci.permuta(array));
+
+
+        //System.out.println(ci.permuta(array));
        // ci.permuta(array);
       // ci.maiorAbs(array);
 

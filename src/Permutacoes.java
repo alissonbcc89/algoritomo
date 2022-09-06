@@ -8,6 +8,8 @@ public class Permutacoes {
     //armazena a permutacao corrente
     private static int[] p;
 
+    private static ArrayList<Integer> array;
+
 
     /**
      * metodo principal: recebe o vetor cujos elementos que serao permutados
@@ -25,9 +27,10 @@ public class Permutacoes {
      * @param vet
      * @param n
      */
-    private static void permuta(int[]vet, int n) {
+    private static void permuta(int []vet, int n) {
 
         if (n==vet.length) {
+            concatena(p);
             cont++;
             imprime();
 
@@ -44,9 +47,8 @@ public class Permutacoes {
 
                 if (!achou) {
 
-                    p[n] = vet[i];
+                    p[n] =  vet[i];
                     permuta(vet,n+1);
-
                 }
 
             } //--for
@@ -54,51 +56,42 @@ public class Permutacoes {
         } //--if/else
 
     } //--permuta
-    public static ArrayList<Integer> concatena(int[] array){
-        ArrayList<Integer> vetor = new ArrayList<Integer>();
-        String aux = "";
-            for(int i =0; i < array.length;i++){
-                aux+= array[i];
-            }
-            int i = Integer.parseInt(aux);
-            vetor.add(i);
-            return vetor;
-
-    }
-    public static int maiorAbs(ArrayList<Integer> arr){
-
-        // Create maxValue variable and initialize with 0
-        int maxValue = 0;
-
-        for(int i = 0; i < arr.size(); i++){
-
-        }
-
-        // Check maximum element using for loop
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) > maxValue)
-                maxValue = arr.get(i);
-        }
-        return maxValue;
-    }
-
-
 
 
     /** imprime a permutacao corrente */
     private static void imprime() {
 
-       // System.out.println();
+        System.out.println();
         //System.out.print("(" + cont + ") : ");
-        //for (int i=0; i < p.length; i++) {System.out.print(p[i] );}
+        //for (int i=0; i < p.length; i++) System.out.print(p[i] + " ");
+       // System.out.print(p[0]);
 
-        System.out.println(maiorAbs(concatena(p)));
-       // System.out.println(p.length);
-
-
-       // System.out.println(maiorAbs(p));
-
+        //System.out.println(maior(array));
     } //--imprime
+
+    private static void concatena(int[] vet){
+    array = new ArrayList<>();
+        String concat = "";
+        for(int i = 0; i < vet.length; i++){
+            concat+= vet[i];
+        }
+        int i = Integer.parseInt(concat);
+        array.add(i);
+
+    }
+
+    private static int maior(ArrayList<Integer> array){
+        int max = 0;
+        for(int i = 0; i < array.size(); i++){
+            if(max > array.get(i)){
+                max = array.get(i);
+            }
+        }
+        return max;
+
+    }
+
+
 
 
     /** metodo principal para teste da classe */
