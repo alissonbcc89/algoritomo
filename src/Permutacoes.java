@@ -30,7 +30,7 @@ public class Permutacoes {
     private static void permuta(int []vet, int n) {
 
         if (n==vet.length) {
-            concatena(p);
+            //concatena(p);
             cont++;
             imprime();
 
@@ -62,16 +62,21 @@ public class Permutacoes {
     private static void imprime() {
 
         System.out.println();
+        System.out.println(p.length);
         //System.out.print("(" + cont + ") : ");
-        //for (int i=0; i < p.length; i++) System.out.print(p[i] + " ");
-       // System.out.print(p[0]);
 
-        //System.out.println(maior(array));
+      //  for (int i=0; i < p.length; i++) System.out.print( + " ");
+       // System.out.print(p[0]);
     } //--imprime
 
-    private static void concatena(int[] vet){
-    array = new ArrayList<>();
+    private static void concatena(){
+        for(int j = 0; j < p.length; j++){
+            array.add(p[j]);
+        }
+
         String concat = "";
+
+        int tam =
         for(int i = 0; i < vet.length; i++){
             concat+= vet[i];
         }
