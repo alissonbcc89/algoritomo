@@ -8,29 +8,40 @@ public class ContaStringInt {
             ArrayList<String> array;
             array = new ArrayList<>();
 
-            int contador = 1;
+            int contador = 0;
 
-            for (int i=0; i < myChars.length; i++){
+            for(int i=0; i < myChars.length; i++){
                 aux = String.valueOf(myChars[i]);
                 for(int j = 1; j < myChars.length; j++) {
-                    if ((aux == String.valueOf(myChars[j]))) {
+                    if (aux == String.valueOf(myChars[j])) {
                         contador++;
-
-                    } else {
+                        aux = String.valueOf(myChars[i+1]);
+                        break;
+                    }
+                    if (aux != String.valueOf(myChars[j])) {
                         array.add(aux);
-                        array.add(String.valueOf(contador));
+                        if (contador > 1) {
+                            array.add(String.valueOf(contador));
+                        }
                         contador = 0;
-                        aux = "";
+
                     }
                 }
+
+
+
             }
 
-            for(int j = 0; j < array.size(); j++){
-                System.out.print(j);
+
+            for (int i = 0; i < array.size(); i++){
+                System.out.println(array.get(i));
             }
 
 
-        }
+    }
+
+
+
 
     public static void main(String[] args) {
 
