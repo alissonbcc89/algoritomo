@@ -37,8 +37,10 @@ public class ContaStringInt {
             }
             else {
                 array.add(String.valueOf(myChars[i]));
-                array.add(String.valueOf(contador));
-                contador = 1;
+                if(contador < 1) {
+                    array.add(String.valueOf(contador));
+                    contador = 1;
+                }
             }
             aux++;
         }
@@ -54,7 +56,7 @@ public class ContaStringInt {
         //
         //        abc
 
-        String a = "bbbaaaadexxxxxx";
+        String a = "abc";
         //Permutacoes.permuta(array);
         ContaStringInt.funcao(a);
     }
